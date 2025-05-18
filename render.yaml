@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: sourish-django-app
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn sourishwebsite.wsgi:application
+    staticPublishPath: staticfiles
