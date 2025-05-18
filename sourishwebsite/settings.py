@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-mlqd&1e4i9$983corvcl^d%0*h4q-q827heu9fy+)30p&^5s(!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sourishwebsite.onrender.com']
 
 
 # Application definition
