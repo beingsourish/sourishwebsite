@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sourish Visited Places List</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .app-header {
+      background-color: skyblue;
+      color: white;
+      padding: 15px 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .app-footer {
+      background-color: skyblue;
+      color: white;
+      padding: 15px 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sky Blue App Header Bar -->
+  <div class="app-header">
+    Sourish Travel History App
+  </div>
+
+  <!-- Welcome Heading -->
+
+
+  <!-- Main Content Block -->
+  {% block content %}
+  {% endblock %}
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sourish Travels | All Rights Reserved</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

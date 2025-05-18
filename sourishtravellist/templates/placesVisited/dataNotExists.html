@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Sourish To Do BucketList{% endblock %}
+
+{% block content %}
+<a href="{% url 'states' %}">Places Visited</a>
+<h1>Sourish Visited Place Details</h1>
+
+<table align="center">
+    <thead>
+        <tr>
+            <th>Sourish Not Visited Place Name</th>
+            <th>Sourish Not Visited Place City</th>
+            <th>Planned Year</th>
+        </tr>
+    </thead>
+ <tbody>
+        <tr>
+            <td>Alaska</td>
+            <td> Alaska </td>
+            <td>2028</td>
+        </tr>
+        <tr>
+            <td>Yellow Stone</td>
+            <td> Salt Lake City </td>
+            <td>2028</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

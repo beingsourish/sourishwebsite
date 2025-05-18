@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Sourish Visited states List{% endblock %}
+
+{% block content %}
+<a href="{% url 'index' %}">Places Visited By Sourish</a>
+    <h1>Sourish Visited Places States</h1>
+
+    <table align="center">
+        <thead>
+            <tr>
+                <th>Sourish Visited state Name</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for place in placestates %}
+                <tr>
+                    <td>{{ place.place_state }}</td>
+
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="3">No places found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

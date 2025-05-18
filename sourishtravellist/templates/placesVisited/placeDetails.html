@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Sourish Visited Places List{% endblock %}
+
+{% block content %}
+<a href="{% url 'index' %}">Detailed Places Sourish</a>
+<h1>Sourish Visited Place Details</h1>
+
+<table align="center">
+    <thead>
+        <tr>
+            <th>Sourish Visited Place Name</th>
+            <th>Sourish Visited Place City</th>
+            <th>Visited Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ placedetails.place_name }}</td>
+            <td>{{ placedetails.place_city }}</td>
+            <td>{{ placedetails.visited_year }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
