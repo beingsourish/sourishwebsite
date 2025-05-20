@@ -11,12 +11,12 @@
 
     <style>
         .hero {
-            background: url("{% static 'images/background.jpeg' %}") no-repeat center center/cover;
+            background: url("{% static 'images/home.jpg' %}") no-repeat center center/cover;
             background-size: cover;
             background-position: center;
-            height: 70vh;
+            height: 550px;
             color: aliceblue;
-            text-shadow: 2px 2px 5px black;
+            text-shadow: 2px 2px 8px black;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -67,23 +67,17 @@
 {% load static %}
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-info shadow">
-    <div class="container">
-        <a class="navbar-brand text-white" href="#">Sourish Travels</a>
-        <a class="navbar-brand text-white" href="{% url 'places_aboutme' %}">About Me</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</nav>
+
 
 <!-- Hero Section -->
 <div class="hero">
     <div>
-        <h1>Explore the World with Sourish</h1>
+        <h1>Learn More About Me</h1>
         <p class="lead">Discover new destinations, cultures, and experiences</p>
-        <a href="{% url 'index' %}" class="btn btn-light btn-lg mt-3">Places Visited By Sourish</a>
+        <a href="{% url 'places_aboutme' %}" class="btn btn-light btn-lg mt-3">JustClickMe</a>
     </div>
+
+
 </div>
 
 <!-- Page Layout with Sidebar and Content -->
@@ -95,7 +89,9 @@
                 <h5>Places Visited</h5>
                 <ul>
                     {% for place in places %}
-                        <li>{{ place.place_name }} - {{ place.place_city }}</li>
+                           <a href="{% url 'place_details' place.id %}" class="text-decoration-none text-dark">
+                           <li>{{ place.place_name }} - {{ place.place_city }}</li>
+                           </a>
                     {% empty %}
                         <li>No places available</li>
                     {% endfor %}
