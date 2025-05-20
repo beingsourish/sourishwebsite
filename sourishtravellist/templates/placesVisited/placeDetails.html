@@ -1,25 +1,10 @@
 {% extends 'base.html' %}
 
-{% block title %}Sourish Visited Places List{% endblock %}
+{% block title %}Sourish Visited Place Details{% endblock %}
 
 {% block content %}
-
 <style>
-    .custom-home-btn {
-        padding: 12px 24px;
-        font-size: 1.1rem;
-        border-radius: 8px;
-        font-weight: 500;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        align-items: end;
-    }
-
-    .custom-home-btn:hover {
-        background-color: #0056b3;
-        transform: scale(1.05);
-        text-decoration: none;
-    }
+    .custom-home-btn,
     .custom-home-btn1 {
         padding: 12px 24px;
         font-size: 1.1rem;
@@ -27,29 +12,46 @@
         font-weight: 500;
         transition: background-color 0.3s ease, transform 0.2s ease;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        align-items: center;
+        margin: 10px;
+    }
+
+    .custom-home-btn:hover,
+    .custom-home-btn1:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+        text-decoration: none;
     }
 </style>
-<a href="{% url 'home' %}" class="btn btn-primary mt-3 custom-home-btn">🏠 Back to Home</a>
 
-<a href="{% url 'index' %}" class="btn btn-primary mt-3 custom-home-btn1">Detailed Places Sourish</a>
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <a href="{% url 'home' %}" class="btn btn-primary custom-home-btn">🏠 Back to Home</a>
+        <a href="{% url 'index' %}" class="btn btn-success custom-home-btn1">📍 All Visited Places</a>
+    </div>
 
-<h1>Sourish Visited Place Details</h1>
+    <h2 class="text-center mb-4">Sourish Visited Place Details</h2>
 
-<table align="center">
-    <thead>
-        <tr>
-            <th>Visited Place Name</th>
-            <th>Visited Place City</th>
-            <th>Year</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>{{ placedetails.place_name }}</td>
-            <td>{{ placedetails.place_city }}</td>
-            <td>{{ placedetails.visited_year }}</td>
-        </tr>
-    </tbody>
-</table>
+    {% if placedetails %}
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover text-center shadow">
+            <thead class="table-dark">
+                <tr>
+                    <th>Visited Place Name</th>
+                    <th>Visited Place City</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ placedetails.place_name }}</td>
+                    <td>{{ placedetails.place_city }}</td>
+                    <td>{{ placedetails.visited_year }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+        <p class="text-center text-muted">No place details found.</p>
+    {% endif %}
+</div>
 {% endblock %}
