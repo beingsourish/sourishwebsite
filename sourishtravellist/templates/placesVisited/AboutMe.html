@@ -31,11 +31,14 @@
 
 <!-- Header/Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-    <a class="navbar-brand" href="{% url 'home' %}">Sourish Travels</a>
+    <div>
+    <a class="btn btn-outline-light" href="{% url 'home' %}">Sourish Travels</a>
+    </div>
     <div class="ms-auto">
         <a href="{% url 'places_aboutme' %}" class="btn btn-outline-light">About Me</a>
     </div>
 </nav>
+
 
 <!-- About Me Section -->
 <section class="about-me-section" style="background: url('{% static "images/usa-background.jpeg" %}') no-repeat center center/cover; padding: 60px 20px; color: white;">
