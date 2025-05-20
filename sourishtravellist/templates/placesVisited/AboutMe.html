@@ -1,4 +1,6 @@
 {% load static %}
+
+<!-- Custom Button Styles -->
 <style>
     .custom-home-btn {
         padding: 12px 24px;
@@ -15,21 +17,41 @@
         text-decoration: none;
     }
 </style>
-<a href="{% url 'home' %}" class="btn btn-primary mt-3 custom-home-btn">🏠 Back to Home</a>
+
+<!-- Back to Home Button -->
+<div class="text-center mt-4">
+    <a href="{% url 'home' %}" class="btn btn-primary custom-home-btn">🏠 Back to Home</a>
+</div>
+
+<!-- About Me Section -->
 <section class="about-me-section" style="background: url('{% static "images/usa-background.jpeg" %}') no-repeat center center/cover; padding: 60px 20px; color: white;">
     <div style="max-width: 900px; margin: 0 auto; text-align: center; background: rgba(0, 0, 0, 0.6); padding: 40px; border-radius: 15px;">
         <img src="{% static 'images/aboutme.jpg' %}" alt="Sourish" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid white; margin-bottom: 20px;">
         <h2 style="font-size: 2.5rem; margin-bottom: 20px;">🌎 About Me</h2>
         <p style="font-size: 1.1rem; line-height: 1.8;">
-            Hi, I'm <strong>Sourish</strong> — a passionate USA travel enthusiast who finds joy
-            in exploring the diverse landscapes, cities, and cultures across America.
-            From the bustling streets of New York City to the tranquil beauty of the Grand Canyon,
-            I believe every place has a story worth experiencing.
+          Hi, I'm Sourish, a passionate USA travel enthusiast and a software engineer by profession.
+            My journey in the United States began in 2015, and since then,
+            I’ve been on an exciting adventure exploring
+            some of the most beautiful and iconic places across the country.
         </p>
         <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 15px;">
-            Traveling is about connecting with people, trying local food, discovering hidden gems, and creating unforgettable memories.
-            Through this site, I share my travel stories, tips, and inspiration to help you plan your own American adventures.
+            My first stop was the vibrant city of Las Vegas, and from there, my travel story unfolded—through the misty trails of the Smoky Mountains, the musical heart of Nashville, the breathtaking views of the Grand Canyon,
+            and the cinematic charm of Los Angeles and Universal Studios.
+           </p>
+        <p>
+            I've wandered the historic landmarks of Washington, D.C., felt the energy of New York City, and stood in awe before the mighty Niagara Falls. The sunny beaches of Miami, the natural beauty of Denver, the heritage-rich streets of Boston,
+            and the wilderness of Yosemite have all left their mark on me.
         </p>
-        <p style="margin-top: 25px; font-style: italic;">Come explore the United States with me — one city, one road trip, one breathtaking view at a time!</p>
+            Other unforgettable experiences include the serene waters of Clearwater, the spirit of Texas, the southern charm of South Carolina, the cozy mountain town of Gatlinburg, and the peaceful landscapes of West Virginia.
+            <p>
+            I’ve lived in Nashville, the scenic coastal town of Monterey, and now, I happily call Tampa, Florida my home, where I live with my family. Traveling across the U.S. has not only enriched my perspective but also deepened my love for diverse landscapes, cultures, and stories.
+
+            Through this blog, I’m excited to share my travel memories, tips, and inspirations to help others discover the beauty of the United States—one adventure at a time.
+        </p>
+        <p style="margin-top: 25px; font-style: italic;">
+            Come explore the United States with me — one city, one road trip, one breathtaking view at a time!
+        </p>
+        <p> To Connect with me send me email @ sourishsmile@gmail.com</p>
+         <p> To Connect with me through insta @beingsourish</p>
     </div>
 </section>
