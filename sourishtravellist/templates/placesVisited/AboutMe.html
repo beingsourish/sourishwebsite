@@ -1,0 +1,35 @@
+{% load static %}
+<style>
+    .custom-home-btn {
+        padding: 12px 24px;
+        font-size: 1.1rem;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .custom-home-btn:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+        text-decoration: none;
+    }
+</style>
+<a href="{% url 'home' %}" class="btn btn-primary mt-3 custom-home-btn">🏠 Back to Home</a>
+<section class="about-me-section" style="background: url('{% static "images/usa-background.jpg" %}') no-repeat center center/cover; padding: 60px 20px; color: white;">
+    <div style="max-width: 900px; margin: 0 auto; text-align: center; background: rgba(0, 0, 0, 0.6); padding: 40px; border-radius: 15px;">
+        <img src="{% static 'images/aboutme.jpg' %}" alt="Sourish" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid white; margin-bottom: 20px;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">🌎 About Me</h2>
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+            Hi, I'm <strong>Sourish</strong> — a passionate USA travel enthusiast who finds joy
+            in exploring the diverse landscapes, cities, and cultures across America.
+            From the bustling streets of New York City to the tranquil beauty of the Grand Canyon,
+            I believe every place has a story worth experiencing.
+        </p>
+        <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 15px;">
+            Traveling is about connecting with people, trying local food, discovering hidden gems, and creating unforgettable memories.
+            Through this site, I share my travel stories, tips, and inspiration to help you plan your own American adventures.
+        </p>
+        <p style="margin-top: 25px; font-style: italic;">Come explore the United States with me — one city, one road trip, one breathtaking view at a time!</p>
+    </div>
+</section>

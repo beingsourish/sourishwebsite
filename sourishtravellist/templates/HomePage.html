@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +11,6 @@
 
     <style>
         .hero {
-            background-image: url("{% static 'images/travel.jpeg' %}") no-repeat center center/cover;
             background: url("{% static 'images/background.jpeg' %}") no-repeat center center/cover;
             background-size: cover;
             background-position: center;
@@ -23,29 +21,56 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-
         }
+
         .hero h1 {
             font-size: 3rem;
             font-weight: bold;
         }
+
         .navbar-brand {
             font-weight: bold;
         }
+
         .section-title {
             margin: 50px 0 20px;
         }
-        .hero::before {
-    background-color: rgba(0, 0, 0, 0.4);  /* 0.4 is balanced */
-}
+
+        .sidebar {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .sidebar h5 {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .sidebar ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #dee2e6;
+            font-size: 0.95rem;
+        }
+
+        .sidebar ul li:last-child {
+            border-bottom: none;
+        }
     </style>
 </head>
 <body>
 {% load static %}
+
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-info shadow">
     <div class="container">
         <a class="navbar-brand text-white" href="#">Sourish Travels</a>
+        <a class="navbar-brand text-white" href="{% url 'places_aboutme' %}">About Me</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -57,29 +82,47 @@
     <div>
         <h1>Explore the World with Sourish</h1>
         <p class="lead">Discover new destinations, cultures, and experiences</p>
-
         <a href="{% url 'index' %}" class="btn btn-light btn-lg mt-3">Places Visited By Sourish</a>
     </div>
 </div>
 
-<!-- Featured Section -->
-<div class="container text-center mt-5" id="places">
-    <h2 class="section-title">Featured Travel Spots</h2>
+<!-- Page Layout with Sidebar and Content -->
+<div class="container mt-5">
     <div class="row">
-        <div class="col-md-4">
-            <img src="{% static 'images/denver.jpeg' %}" class="img-fluid rounded shadow" alt="Denver">
-            <h5 class="mt-2">The DENVER</h5>
-            <p>Explore breathtaking views and spiritual trails.</p>
+        <!-- Sidebar -->
+        <div class="col-md-3">
+            <div class="sidebar shadow-sm">
+                <h5>Places Visited</h5>
+                <ul>
+                    {% for place in places %}
+                        <li>{{ place.place_name }} - {{ place.place_city }}</li>
+                    {% empty %}
+                        <li>No places available</li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
-        <div class="col-md-4">
-            <img src="{% static 'images/miami.jpeg' %}" class="img-fluid rounded shadow" alt="Miami">
-            <h5 class="mt-2">Miami Beaches</h5>
-            <p>Relax under the sun and enjoy vibrant beach life.</p>
-        </div>
-        <div class="col-md-4">
-            <img src="{% static 'images/Disney.jpeg' %}" class="img-fluid rounded shadow" alt="Disney">
-            <h5 class="mt-2">Disney Fun</h5>
-            <p>Experience the Fun.</p>
+
+        <!-- Main Content -->
+        <div class="col-md-9">
+            <h2 class="section-title text-center">Featured Travel Spots</h2>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="{% static 'images/denver.jpeg' %}" class="img-fluid rounded shadow" alt="Denver">
+                    <h5 class="mt-2">The DENVER</h5>
+                    <p>Explore breathtaking views and spiritual trails.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="{% static 'images/miami.jpeg' %}" class="img-fluid rounded shadow" alt="Miami">
+                    <h5 class="mt-2">Miami Beaches</h5>
+                    <p>Relax under the sun and enjoy vibrant beach life.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="{% static 'images/Disney.jpeg' %}" class="img-fluid rounded shadow" alt="Disney">
+                    <h5 class="mt-2">Disney Fun</h5>
+                    <p>Experience the Fun.</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -3,7 +3,35 @@
 {% block title %}Sourish Visited Places List{% endblock %}
 
 {% block content %}
-<a href="{% url 'states' %}">States Visited by Sourish</a>
+<style>
+    .custom-home-btn {
+        padding: 12px 24px;
+        font-size: 1.1rem;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        align-items: end;
+    }
+
+    .custom-home-btn:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+        text-decoration: none;
+    }
+    .custom-home-btn1 {
+        padding: 12px 24px;
+        font-size: 1.1rem;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        align-items: center;
+    }
+</style>
+<a href="{% url 'home' %}" class="btn btn-primary mt-3 custom-home-btn">🏠 Back to Home</a>
+
+<a href="{% url 'states' %}" class="btn btn-primary mt-3 custom-home-btn1">States Visited by Sourish</a>
     <h1>Sourish Visited Places List</h1>
     <table align="center">
         <thead>

@@ -23,6 +23,10 @@ def place_details(request, place_id):
     except:
         return render(request, 'placesVisited/dataNotExists.html')
 
+def places_aboutme(request):
+    return render(request, 'placesVisited/AboutMe.html')
+
+
 @api_view(['GET'])
 def places_api(request):
     places = PlacesVisited.objects.all()
