@@ -1,6 +1,6 @@
 from django.http import HttpResponse
-from django.shortcuts import render
-from sourishtravellist.models import PlacesVisited,Places
+from django.shortcuts import render, redirect
+from sourishtravellist.models import PlacesVisited,Places,Userdetails
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
@@ -26,6 +26,27 @@ def place_details(request, place_id):
 def places_aboutme(request):
     return render(request, 'placesVisited/AboutMe.html')
 
+def signup(request):
+    if request.method == 'POST':
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        email = request.POST.get('email')
+        gender = request.POST.get('gender')
+
+        # Check if email already exists
+        if Userdetails.objects.filter(email=email).exists():
+            return HttpResponse("Email already registered.")
+
+        # Save to database
+        Userdetails.objects.create(
+            first_name=first_name,
+            last_name=last_name,
+            email=email,
+            gender=gender
+        )
+        return HttpResponse("Thank you for signing up! Our team will reach out to You.")
+    else:
+        return redirect('/')
 
 @api_view(['GET'])
 def places_api(request):

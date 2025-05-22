@@ -6,4 +6,5 @@ urlpatterns = [
     path('<int:place_id>', views.place_details, name='place_details'),
     path('api/placeslist/', views.places_api, name='places_api'),
     path('placeslist/', views.places_aboutme, name='places_aboutme'),
+    path('signup/', views.signup, name='signup')
 ]

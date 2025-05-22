@@ -28,3 +28,12 @@ class Userdetails(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     gender = models.CharField(max_length=255)
+
+    GENDER_CHOICES = [
+        ('male', 'Male'),
+        ('female', 'Female'),
+        ('other', 'Other'),
+    ]
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
