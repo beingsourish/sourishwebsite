@@ -5,7 +5,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from sourishtravellist.serializers import PlacesVisitedSerializer
-
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -33,21 +33,20 @@ def signup(request):
         email = request.POST.get('email')
         gender = request.POST.get('gender')
 
-        # Check if email already exists
         if Userdetails.objects.filter(email=email).exists():
-            return HttpResponse("Email already registered.")
+            messages.warning(request, "Email already registered.")
+            return redirect('/')
 
-        # Save to database
         Userdetails.objects.create(
             first_name=first_name,
             last_name=last_name,
             email=email,
             gender=gender
         )
-        return HttpResponse("Thank you for signing up! Our team will reach out to You.")
+        messages.success(request, "Thank you for signing up! Our team will reach out to you shortly.")
+        return redirect('/')
     else:
         return redirect('/')
-
 @api_view(['GET'])
 def places_api(request):
     places = PlacesVisited.objects.all()
