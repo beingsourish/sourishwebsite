@@ -49,6 +49,18 @@ def signup(request):
         return redirect('/')
     else:
         return redirect('/')
+
+def dashboard(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        userdetails = Userdetails.objects.all()
+        if username == 'beingsourish' and password == 'Kolkata@1':
+
+            return render(request, 'userdashboard.html', {'userdetails': userdetails})
+        else:
+            return render(request, 'admin_login.html', {'error': 'Invalid credentials or not authorized.'})
+    return render(request, 'admin_login.html')
 @api_view(['GET'])
 def places_api(request):
     places = PlacesVisited.objects.all()
