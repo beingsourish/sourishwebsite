@@ -8,5 +8,9 @@ class PlacesAdmin(admin.ModelAdmin):
 class PlacesAdminState(admin.ModelAdmin):
     list_display = ('id',  'place_state')
 
+class userdetailsAdmin(admin.ModelAdmin):
+    list_display = ('id',  'user_name' ,'password' ,'email' ,'first_name','last_name' ,'gender' )
+
 admin.site.register(Places,PlacesAdminState)
 admin.site.register(PlacesVisited,PlacesAdmin)
+admin.site.register(Userdetails,userdetailsAdmin)

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Sourish Visited Place Details{% endblock %}
+{% block title %}My Fav Visited Place Details{% endblock %}
 
 {% block content %}
 <style>
@@ -21,6 +21,30 @@
         transform: scale(1.05);
         text-decoration: none;
     }
+
+    .detail-card {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+    .detail-section {
+        margin-bottom: 20px;
+    }
+
+    .detail-label {
+        font-weight: 600;
+        color: #343a40;
+        font-size: 1.1rem;
+    }
+
+    .detail-value {
+        color: #6c757d;
+        font-size: 1rem;
+        margin-top: 5px;
+    }
 </style>
 
 <div class="container mt-5">
@@ -29,26 +53,26 @@
         <a href="{% url 'index' %}" class="btn btn-success custom-home-btn1">📍 All Visited Places</a>
     </div>
 
-    <h2 class="text-center mb-4">Sourish Visited Place Details</h2>
+    <h2 class="text-center mb-4">My Visited Place Details</h2>
 
     {% if placedetails %}
-    <div class="table-responsive">
-        <table class="table table-bordered table-hover text-center shadow">
-            <thead class="table-dark">
-                <tr>
-                    <th>Visited Place Name</th>
-                    <th>Visited Place City</th>
-                    <th>Year</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{ placedetails.place_name }}</td>
-                    <td>{{ placedetails.place_city }}</td>
-                    <td>{{ placedetails.visited_year }}</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="detail-card mx-auto" style="max-width: 600px;">
+        <div class="detail-section">
+            <div class="detail-label">Visited Place Name</div>
+            <div class="detail-value">{{ placedetails.place_name }}</div>
+        </div>
+        <div class="detail-section">
+            <div class="detail-label">Visited Place City</div>
+            <div class="detail-value">{{ placedetails.place_city }}</div>
+        </div>
+        <div class="detail-section">
+            <div class="detail-label">Year</div>
+            <div class="detail-value">{{ placedetails.visited_year }}</div>
+        </div>
+        <div class="detail-section">
+            <div class="detail-label">Description</div>
+            <div class="detail-value">{{ placedetails.description }}</div>
+        </div>
     </div>
     {% else %}
         <p class="text-center text-muted">No place details found.</p>

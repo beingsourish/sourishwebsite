@@ -19,4 +19,12 @@ class PlacesVisited(models.Model):
     place_state = models.ForeignKey(Places, on_delete=models.CASCADE)
     record_create= models.DateTimeField(default=timezone.now)
     record_update= models.DateTimeField(default=timezone.now)
+    description = models.TextField(blank=True, null=True)
 
+class Userdetails(models.Model):
+    user_name = models.CharField(max_length=255)
+    password = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    gender = models.CharField(max_length=255)
