@@ -28,6 +28,7 @@ def places_aboutme(request):
 
 def signup(request):
     if request.method == 'POST':
+
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
         email = request.POST.get('email')
@@ -43,6 +44,7 @@ def signup(request):
             email=email,
             gender=gender
         )
+
         messages.success(request, "Thank you for signing up! Our team will reach out to you shortly.")
         return redirect('/')
     else:
