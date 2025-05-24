@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}My College Journey{% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">My College Journey</h2>
+
+                    <p>
+                        After completing my schooling in Agartala, I appeared for WBJEE and went through the counselling process. I got admitted to the <strong>Birbhum Institute of Engineering and Technology</strong> in the Electronics and Communication Engineering branch.
+                    </p>
+
+                    <p>
+                        These years laid the groundwork for my higher education and professional journey, instilling in me strong values of hard work, teamwork, and continuous growth.
+                    </p>
+
+                    <p>
+                        Hostel life was a mix of chaos and charm—late-night study sessions, shared meals, and endless laughter. It was here that I built friendships that felt more like family, with people who stood by me through every high and low.
+                    </p>
+
+                    <p>
+                        College life taught me not just academics, but resilience, teamwork, and self-discovery. My engineering journey was filled with challenges, innovations, and the joy of turning ideas into reality—an experience that shaped both my career and character.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- College Pics Section -->
+    <div class="mt-5">
+        <h2 class="section-title text-center mb-4">My College Pics</h2>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-4">
+                <img src="{% static 'images/bietsuri.jpeg' %}" class="img-fluid rounded shadow" alt="College">
+                <h5 class="mt-2">College</h5>
+                <p>BIET Suri</p>
+            </div>
+
+            <div class="col-md-6 text-center mb-4">
+                <img src="{% static 'images/hostel1.jpg' %}" class="img-fluid rounded shadow" alt="Hostel Life">
+                <h5 class="mt-2">Hostel Life</h5>
+                <p>Where bonds were built</p>
+            </div>
+
+            <div class="col-md-6 text-center mb-4">
+                <img src="{% static 'images/hostel2.jpg' %}" class="img-fluid rounded shadow" alt="College Friends">
+                <h5 class="mt-2">College Friends</h5>
+                <p>My second family</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

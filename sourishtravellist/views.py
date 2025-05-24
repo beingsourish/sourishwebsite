@@ -61,6 +61,19 @@ def dashboard(request):
         else:
             return render(request, 'admin_login.html', {'error': 'Invalid credentials or not authorized.'})
     return render(request, 'admin_login.html')
+
+def earlyLife(request):
+    return render(request, 'placesVisited/earlyLife.html', )
+
+def schooling(request):
+    return render(request, 'placesVisited/schooling.html', )
+
+def college(request):
+    return render(request, 'placesVisited/college.html', )
+
+def career(request):
+    return render(request, 'placesVisited/career.html', )
+
 @api_view(['GET'])
 def places_api(request):
     places = PlacesVisited.objects.all()

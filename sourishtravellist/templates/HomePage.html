@@ -78,9 +78,9 @@
 {% endif %}
 <!-- Header/Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-    <a class="navbar-brand" href="#">Sourish Travels</a>
+    <a class="navbar-brand" href="#"> World Of Sourish</a>
     <div class="ms-auto d-flex gap-2">
-        <a href="{% url 'places_aboutme' %}" class="btn btn-outline-light">About Me</a>
+
         <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button>
         <a href="{% url 'admin_login' %}" class="btn btn-outline-light ms-2">Admin Login</a>
     </div>
@@ -100,36 +100,45 @@
         <!-- Sidebar -->
         <div class="col-md-3">
             <div class="sidebar shadow-sm">
-                <h5>Places Visited</h5>
-                <ul>
-                    {% for place in places %}
-                        <a href="{% url 'place_details' place.id %}" class="text-decoration-none text-dark">
-                            <li>{{ place.place_name }} - {{ place.place_city }}</li>
-                        </a>
-                    {% empty %}
-                        <li>No places available</li>
-                    {% endfor %}
-                </ul>
+                <h5>Know Me More </h5>
+                <p>
+                   <a href="{% url 'places_aboutme' %}" class="text-decoration-none">About Me</a>
+                    </p>
+                <p>
+                    <a href="{% url 'earlyLife' %}" class="text-decoration-none">Early Life</a>
+                </p>
+                <p>
+                <a href="{% url 'schooling' %}" class="text-decoration-none">Schooling</a>
+                   </p>
+                <p>
+                    <a href="{% url 'college' %}" class="text-decoration-none">College</a>
+                </p>
+                <p>
+                    <a href="{% url 'career' %}" class="text-decoration-none">Work Life</a>
+                </p>
+                <p>
+                    <a href="{% url 'places_aboutme' %}" class="text-decoration-none">Journey To USA</a>
+                </p>
             </div>
         </div>
 
         <!-- Main Content -->
         <div class="col-md-9">
-            <h2 class="section-title text-center">Featured Travel Spots</h2>
+            <h2 class="section-title text-center">My favourites Places around USA</h2>
             <div class="row text-center">
                 <div class="col-md-4">
-                    <img src="{% static 'images/denver.jpeg' %}" class="img-fluid rounded shadow" alt="Denver">
-                    <h5 class="mt-2">The DENVER</h5>
+                    <img src="{% static 'images/USACollage.png' %}" class="img-fluid rounded shadow" alt="Denver">
+                    <h5 class="mt-2">The Places to remember</h5>
                     <p>Explore breathtaking views and spiritual trails.</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="{% static 'images/miami.jpeg' %}" class="img-fluid rounded shadow" alt="Miami">
-                    <h5 class="mt-2">Miami Beaches</h5>
-                    <p>Relax under the sun and enjoy vibrant beach life.</p>
+                    <img src="{% static 'images/Horseshoes.jpg' %}" class="img-fluid rounded shadow" alt="Miami">
+                    <h5 class="mt-2">Horse Shoes Bend Beaches</h5>
+                    <p>Amazing Wonder in the World.</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="{% static 'images/Disney.jpeg' %}" class="img-fluid rounded shadow" alt="Disney">
-                    <h5 class="mt-2">Disney Fun</h5>
+                    <img src="{% static 'images/NYC.jpeg' %}" class="img-fluid rounded shadow" alt="NYC">
+                    <h5 class="mt-2">NYC Fun</h5>
                     <p>Experience the Fun.</p>
                 </div>
             </div>

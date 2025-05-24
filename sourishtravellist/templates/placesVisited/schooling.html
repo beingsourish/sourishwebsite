@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}My Schooling Journey{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0 mb-5">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">My Schooling Journey</h2>
+
+                    <p>
+                        My educational journey began in <strong>Kolkata, West Bengal</strong>, where I attended <strong>Kindergarten School of Chetla</strong>. It was a nurturing, playful, and creative environment that helped me build early social, emotional, and academic skills through exploration and storytelling.
+                    </p>
+
+                    <p>
+                        Later, I moved to the beautiful <strong>Andaman and Nicobar Islands</strong> and studied at <strong>Kendriya Vidyalaya No. 1, Port Blair</strong>. There, I not only focused on academics but also developed a strong interest in sports like cricket and volleyball.
+                    </p>
+
+                    <p>
+                        Growing up on the islands offered a peaceful and inspiring learning environment. The school nurtured discipline, curiosity, and creativity—qualities that helped shape the foundation of who I am today.
+                    </p>
+
+                    <p>
+                        After completing my schooling in Port Blair, I moved to <strong>Agartala, Tripura</strong>. This transition exposed me to diverse cultures and experiences, further enriching my worldview and adaptability.
+                    </p>
+
+                    <p>
+                        These years laid the groundwork for my higher education and professional journey, instilling in me strong values of hard work, teamwork, and continuous growth.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- My School Pics Section -->
+    <div class="row">
+        <h2 class="section-title text-center mb-4">My School Pics</h2>
+        <div class="col-md-6 text-center mb-4">
+            <img src="{% static 'images/KVPortblair.jpeg' %}" class="img-fluid rounded shadow" alt="KV Portblair">
+            <h5 class="mt-2">KV Portblair</h5>
+            <p>My school in Andaman</p>
+        </div>
+        <div class="col-md-6 text-center mb-4">
+            <img src="{% static 'images/KVAgartala.jpeg' %}" class="img-fluid rounded shadow" alt="KV Agartala">
+            <h5 class="mt-2">KV Kunjaban</h5>
+            <p>My school in Tripura</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
