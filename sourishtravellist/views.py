@@ -74,6 +74,9 @@ def college(request):
 def career(request):
     return render(request, 'placesVisited/career.html', )
 
+def journeytousa(request):
+    return render(request, 'placesVisited/journeytousa.html', )
+
 @api_view(['GET'])
 def places_api(request):
     places = PlacesVisited.objects.all()

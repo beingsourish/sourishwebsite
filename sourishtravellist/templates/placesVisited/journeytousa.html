@@ -1,33 +1,9 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block title %}Sourish Visited Places List{% endblock %}
+{% block title %}My Journey to the USA{% endblock %}
 
 {% block content %}
-<style>
-    .custom-home-btn, .custom-home-btn1 {
-        padding: 12px 24px;
-        font-size: 1.1rem;
-        border-radius: 8px;
-        font-weight: 500;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        margin: 10px;
-    }
-
-    .custom-home-btn:hover, .custom-home-btn1:hover {
-        background-color: #0056b3;
-        transform: scale(1.05);
-        text-decoration: none;
-    }
-</style>
-
 <div class="container mt-5">
-    <div class="text-center mb-4">
-        <a href="{% url 'home' %}" class="btn btn-primary custom-home-btn">🏠 Back to Home</a>
-        <a href="{% url 'states' %}" class="btn btn-success custom-home-btn1">📍 States Visited by Sourish</a>
-    </div>
-
-    <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card shadow-sm border-0">
@@ -57,36 +33,5 @@
             </div>
         </div>
     </div>
-</div>
-
-
-    <h2 class="text-center mb-4">Visited Places Around USA</h2>
-
-    {% if places %}
-    <div class="table-responsive">
-        <table class="table table-bordered table-striped table-hover text-center shadow">
-            <thead class="table-dark">
-                <tr>
-                    <th>Place Name</th>
-                    <th>City</th>
-                    <th>Visited Year</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for place in places %}
-                    <tr>
-                        <td>
-                            <a href="{% url 'place_details' place.id %}" class="text-decoration-none">{{ place.place_name }}</a>
-                        </td>
-                        <td>{{ place.place_city }}</td>
-                        <td>{{ place.visited_year }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-    {% else %}
-        <p class="text-center text-muted">No places found.</p>
-    {% endif %}
 </div>
 {% endblock %}

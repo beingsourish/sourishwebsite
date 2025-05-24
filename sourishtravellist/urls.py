@@ -11,5 +11,7 @@ urlpatterns = [
     path('earlyLife/', views.earlyLife, name='earlyLife'),
     path('schooling/', views.schooling, name='schooling'),
     path('college/', views.college, name='college'),
-    path('career/', views.career, name='career')
+    path('career/', views.career, name='career'),
+path('journeytousa/', views.journeytousa, name='journeytousa')
+
 ]
